@@ -15,9 +15,9 @@ class SessionsController < ApplicationController
     # If user's login doesn't work, send them back to the login form.
       @messages = []
       if user
-        @messages << "Incorrect Password" if params[:password].length != 0
+        @messages << "Invalid Password" if params[:password].length != 0
       else
-        @messages << "User does not exist" if params[:email].length != 0
+        @messages << "Invalid Email" if params[:email].length != 0
       end
 
       @messages << "Email is blank" if params[:email].length == 0

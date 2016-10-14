@@ -36,6 +36,8 @@ gem 'rmagick'
 gem 'stripe'
 gem 'faker'
 
+gem 'to_words', '1.1.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

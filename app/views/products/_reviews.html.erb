@@ -1,0 +1,27 @@
+<h3>Reviews</h3>
+<% @product.reviews.each do |review| %>
+  <div class="review">
+    <div>
+      <% (1..review.rating).each do %>
+        <span>★</span>
+      <% end %>
+      <% (1..5-review.rating).each do %>
+        <span>☆</span>
+      <% end %>
+      <span>
+        <b><%= review.rating.to_words.capitalize %>
+          <% if review.rating == 1 %>
+            Star
+          <% else %>
+            Stars
+          <% end %>
+        </b>
+      </span>
+    </div>
+    <div>
+      By <%= review.user.first_name %>
+      on <%= review.created_at.strftime("%B %e, %Y") %>
+    </div>
+    <div><%= review.description %></div>
+  </div>
+<% end %>
