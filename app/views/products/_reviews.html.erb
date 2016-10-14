@@ -1,5 +1,5 @@
 <h3>Reviews</h3>
-<% @product.reviews.each do |review| %>
+<% @product.reviews.order("created_at desc").each do |review| %>
   <div class="review">
     <div>
       <% (1..review.rating).each do %>
