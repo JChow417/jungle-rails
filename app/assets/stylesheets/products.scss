@@ -83,8 +83,19 @@ main section.products-show {
       margin-bottom: 20px;
     }
 
-    .review {
-      margin-bottom: 20px;
+    .reviews {
+      margin-left: 20px;
+      .average {
+        margin-bottom: 20px;
+        margin-left: 10px;
+      }
+      .review {
+        margin-bottom: 15px;
+        margin-left: 15px;
+      }
+      .lead {
+        margin-bottom: 0px;
+      }
     }
   }
 }

@@ -31,6 +31,13 @@ User.create(
   password_digest: "$2a$10$zWr5e0r.rbNppXxsd7M3zePY47iCrDGsQcA4AA9V0e54f1cVwbu8i"
 )
 
+User.create(
+  first_name: "McLovin'",
+  last_name: "McLovin'",
+  email: "mclovin@gmail.com",
+  password_digest: "$2a$10$zWr5e0r.rbNppXxsd7M3zePY47iCrDGsQcA4AA9V0e54f1cVwbu8i"
+)
+
 ## CATEGORIES
 
 puts "Finding or Creating Categories ..."
@@ -156,12 +163,12 @@ prod1.reviews.create!({
 })
 
 prod1.reviews.create!({
-  user_id:  1,
+  user_id:  2,
   rating: 3,
 })
 
 prod1.reviews.create!({
-  user_id:  1,
+  user_id:  2,
   description: Faker::Hipster.paragraph(4),
   rating: 4,
 })
@@ -169,11 +176,11 @@ prod1.reviews.create!({
 prod2.reviews.create!({
   user_id:  1,
   description: Faker::Hipster.paragraph(4),
-  rating: 0,
+  rating: 2,
 })
 
 prod3.reviews.create!({
-  user_id:  1,
+  user_id:  2,
   rating: 1,
 })
 

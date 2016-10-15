@@ -1,0 +1,36 @@
+<h4>Customer Reviews</h4>
+<div class="customer">
+  <% @product.reviews.order("created_at desc").each do |review| %>
+    <div class="review">
+      <div>
+        <% (1..review.rating).each do %>
+          <span><i class="fa fa-star" aria-hidden="true"></i></span>
+        <% end %>
+        <% (1..5-review.rating).each do %>
+          <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+        <% end %>
+        <span>
+          <b><%= review.rating.to_words.capitalize %>
+            <% if review.rating == 1 %>
+              Star
+            <% else %>
+              Stars
+            <% end %>
+          </b>
+        </span>
+      </div>
+      <div>
+        By <%= review.user.first_name %>
+        on <%= review.created_at.strftime("%B %e, %Y") %>
+      </div>
+      <div><%= review.description %></div>
+
+      <% if review.user == current_user %>
+        <%= link_to [@product, review], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } do %>
+          <%= fa_icon('trash') %> &nbsp; Delete review &nbsp;
+        <% end %>
+      <% end %>
+
+    </div>
+  <% end %>
+</div>
