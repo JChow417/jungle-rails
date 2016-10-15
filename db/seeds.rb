@@ -25,17 +25,17 @@ puts "Re-creating Users ..."
 User.destroy_all
 
 User.create(
-  first_name: "John",
-  last_name: "Chow",
-  email: "jchow417@gmail.com",
+  first_name: 'John',
+  last_name: 'Chow',
+  email: 'jchow417@gmail.com',
   password: '123',
   password_confirmation: '123'
 )
 
 User.create(
-  first_name: "McLovin'",
-  last_name: "McLovin'",
-  email: "mclovin@gmail.com",
+  first_name: 'McLovin\'',
+  last_name: 'McLovin\'',
+  email: 'mclovin@gmail.com',
   password: '123',
   password_confirmation: '123'
 )

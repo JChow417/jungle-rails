@@ -4,13 +4,13 @@
   <%  average_stars = @product.reviews.sum(:rating).to_f / @product.reviews.count.to_f %>
 
   <% (1..average_stars).each do %>
-    <span><%= fa_icon('star') %></span>
+    <span class='star'><%= fa_icon('star') %></span>
   <% end %>
 
-  <span><%= fa_icon('star-half-o') if average_stars % 1 != 0 %></span>
+  <span class='star'><%= fa_icon('star-half-o') if average_stars % 1 != 0 %></span>
 
   <% (1..5 - average_stars).each do %>
-    <span><%= fa_icon('star-o') %></span>
+    <span class='star'><%= fa_icon('star-o') %></span>
   <% end %>
 
   <span>

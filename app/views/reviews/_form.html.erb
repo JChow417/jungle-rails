@@ -12,8 +12,47 @@
   <% end %>
 
   <div class="form-group">
-    <%= form.label :rating %>
-    <%= form.select :rating, (1..5), { include_blank: true }, class: 'form-control' %>
+
+    <%= form.hidden_field :rating %>
+
+    <div class='star-rater'>
+      <% (1..5).each do |i| %>
+        <span class='star _<%= i %>'>
+          <%= fa_icon('star-o') %>
+        </span>
+      <% end %>
+      <script>
+        $(document).ready(function() {
+
+          function setStars(starNum) {
+            for (var i = 1; i <= 5; i += 1) {
+              if (i <= starNum) {
+                $('span.star._' + i + ' i').attr('class', 'fa fa-star');
+              } else {
+                $('span.star._' + i + ' i').attr('class', 'fa fa-star-o');
+              }
+            }
+          }
+
+          [1,2,3,4,5].map(function(starNum) {
+            $('span.star._' + starNum).on({
+              click: function() {
+                $('#review_rating').val(starNum);
+              },
+              mouseover: function() {
+                setStars(starNum);
+              },
+              mouseleave: function() {
+                setStars($('#review_rating').val());
+              }
+            });
+          });
+
+        });
+      </script>
+    </div>
+    <%#= form.label :rating %>
+    <%#= form.select :rating, (1..5), { include_blank: true }, class: 'form-control' %>
   </div>
 
   <div class="form-group">

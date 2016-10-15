@@ -4,12 +4,8 @@
     <div class='review'>
       <div>
 
-        <% (1..review.rating).each do %>
-          <span><%= fa_icon('star') %></span>
-        <% end %>
-
-        <% (1..5 - review.rating).each do %>
-          <span><%= fa_icon('star-o') %></span>
+        <% (1..5).each do |i| %>
+          <span class='star'><%= i <= review.rating ? fa_icon('star') : fa_icon('star-o') %></span>
         <% end %>
 
         <span>

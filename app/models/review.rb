@@ -4,6 +4,6 @@ class Review < ActiveRecord::Base
 
   validates :product, presence: true
   validates :user, presence: true
-  validates :rating, inclusion: {in: 1..5, message: 'invalid'}
+  validates :rating, inclusion: {in: 1..5, message: 'is invalid'}
 
 end
