@@ -4,7 +4,7 @@
 
     <% if form.object.errors.any? %>
       <div class="alert alert-danger">
-        <strong>The following errors prevented saving:</strong>
+        <strong>The following errors prevented submission:</strong>
         <ul>
           <% form.object.errors.full_messages.each do |error| %>
             <li><%= error %></li>
@@ -15,7 +15,7 @@
 
     <div class="form-group">
       <%= form.label :rating %>
-      <%= form.select :rating, (1..5), class: 'form-control' %>
+      <%= form.select :rating, (1..5), { include_blank: true }, class: 'form-control' %>
     </div>
 
     <div class="form-group">
