@@ -28,14 +28,16 @@ User.create(
   first_name: "John",
   last_name: "Chow",
   email: "jchow417@gmail.com",
-  password_digest: "$2a$10$zWr5e0r.rbNppXxsd7M3zePY47iCrDGsQcA4AA9V0e54f1cVwbu8i"
+  password: '123',
+  password_confirmation: '123'
 )
 
 User.create(
   first_name: "McLovin'",
   last_name: "McLovin'",
   email: "mclovin@gmail.com",
-  password_digest: "$2a$10$zWr5e0r.rbNppXxsd7M3zePY47iCrDGsQcA4AA9V0e54f1cVwbu8i"
+  password: '123',
+  password_confirmation: '123'
 )
 
 ## CATEGORIES

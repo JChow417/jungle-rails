@@ -28,20 +28,21 @@
 
     <% if current_user %>
       <h3>Write a Review</h3>
-      <div class="row well write-review">
+      <div class="well write-review">
         <%= render 'reviews/form' %>
       </div>
     <% end %>
 
     <h3>Reviews</h3>
-    <div class="row well">
+    <div class="well">
       <div class="reviews">
-      <% if @product.reviews.count == 0 %>
-        <p class="lead"> This product has not been reviewed</p>
-      <% else %>
-            <%= render 'reviews/average' %>
-            <%= render 'reviews/reviews' %>
-      <% end %>
+
+        <% if @product.reviews.count == 0 %>
+          <p class="lead"> This product has not been reviewed</p>
+        <% else %>
+          <%= render 'reviews/average' %>
+          <%= render 'reviews/reviews' %>
+        <% end %>
 
       </div>
     </div>

@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
     @product = Product.find(params[:product_id])
     @review = Review.new(review_params)
 
-    @review.user_id = current_user.id
+    @review.user = current_user
     @review.product_id = @product.id
 
     if @review.save
@@ -13,12 +13,14 @@ class ReviewsController < ApplicationController
     else
       render :'products/show'
     end
+
   end
 
   def destroy
     @product = Product.find(params[:product_id])
     @review = Review.find params[:id]
-    if @review.user_id == current_user.id
+
+    if @review.user == current_user
       @review.destroy
       redirect_to product_path(@product), notice: 'Product deleted!'
     else
@@ -28,6 +30,7 @@ class ReviewsController < ApplicationController
   end
 
   private
+
     def review_params
       params.require(:review).permit(:description, :rating)
     end
