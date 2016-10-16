@@ -27,26 +27,28 @@
           function setStars(starNum) {
             for (var i = 1; i <= 5; i += 1) {
               if (i <= starNum) {
-                $('span.star._' + i + ' i').attr('class', 'fa fa-star');
+                $('.write-review span.star._' + i + ' i').attr('class', 'fa fa-star');
               } else {
-                $('span.star._' + i + ' i').attr('class', 'fa fa-star-o');
+                $('.write-review span.star._' + i + ' i').attr('class', 'fa fa-star-o');
               }
             }
           }
 
-          [1,2,3,4,5].map(function(starNum) {
-            $('span.star._' + starNum).on({
-              click: function() {
-                $('#review_rating').val(starNum);
-              },
-              mouseover: function() {
-                setStars(starNum);
-              },
-              mouseleave: function() {
-                setStars($('#review_rating').val());
-              }
-            });
-          });
+          for (var i = 1; i <= 5; i += 1) {
+            (function(starNum){
+              $('span.star._' + starNum).on({
+                click: function() {
+                  $('#review_rating').val(starNum);
+                },
+                mouseover: function() {
+                  setStars(starNum);
+                },
+                mouseleave: function() {
+                  setStars($('#review_rating').val());
+                }
+              });
+            })(i);
+          }
 
         });
       </script>

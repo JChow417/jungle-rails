@@ -17,7 +17,7 @@
 
       </div>
       <div>
-        By <%= review.user.first_name %>
+        By <%= review.user.first_name %> <%= review.user.last_name %>
         on <%= review.created_at.strftime("%B %e, %Y") %>
       </div>
       <div><%= review.description %></div>
