@@ -84,6 +84,10 @@ main section.products-show {
 
     div.star-rater {
       font-size: xx-large;
+
+      .star {
+        cursor: pointer;
+      }
     }
 
     img.main-img {

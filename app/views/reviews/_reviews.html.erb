@@ -1,6 +1,6 @@
 <h4>Customer Reviews</h4>
 <div class='customer'>
-  <% @product.reviews.order('created_at desc').each do |review| %>
+  <% reviews.each do |review| %>
     <div class='review'>
       <div>
 
@@ -11,7 +11,7 @@
         <span>
           <b>
             <%= review.rating.to_words.capitalize %>
-            <%= review.rating == 1 ? 'Star' : 'Stars' %>
+            <%= star_or_stars(review.rating) %>
           </b>
         </span>
 

@@ -41,7 +41,7 @@
           <p class="lead"> This product has not been reviewed</p>
         <% else %>
           <%= render 'reviews/average' %>
-          <%= render 'reviews/reviews' %>
+          <%= render partial: 'reviews/reviews', locals: {reviews: @reviews} %>
         <% end %>
 
       </div>
